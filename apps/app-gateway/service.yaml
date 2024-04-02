@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apigateway-svc
+  labels:
+    alias: localhost
+    run: apigateway-svc
+spec:
+  type: NodePort
+  selector:
+    run: apigateway
+  ports:
+    - protocol: TCP
+      port: 4000
+      targetPort: 3000

@@ -1,0 +1,6 @@
+app: apiproduct
+port: 4002
+container:
+  image: api-product
+  version: 4
+  port: 8010

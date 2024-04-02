@@ -1,0 +1,6 @@
+app: apigateway
+port: 4000
+container:
+  image: apigateway
+  version: 12
+  port: 3000

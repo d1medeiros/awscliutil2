@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apicustomer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: apicustomer
+  template:
+    metadata:
+      labels:
+        run: apicustomer
+    spec:
+      containers:
+        - name: apicustomer
+          image: 301261400751.dkr.ecr.us-east-1.amazonaws.com/api-customer:12
+          resources:
+            requests:
+              memory: "10Mi"
+              cpu: "0.03"
+            limits:
+              memory: "20Mi"
+              cpu: "0.05"
+          ports:
+            - containerPort: 3000
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: APP_NAME
+              value: apicustomer
+            - name: TRACE_ENDPOINT
+              value: "http://simplest-collector.monitoring:14268/api/traces"

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.app}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: {{.Values.app}}
+  template:
+    metadata:
+      labels:
+        run: {{.Values.app}}
+    spec:
+      containers:
+        - name: {{.Values.app}}
+          image:
+            301261400751.dkr.ecr.us-east-1.amazonaws.com/{{.Values.container.image}}:{{.Values.container.version}}
+          resources:
+            requests:
+              memory: "10Mi"
+              cpu: "0.03"
+            limits:
+              memory: "20Mi"
+              cpu: "0.05"
+          ports:
+            - containerPort: {{.Values.container.port}}
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: APP_NAME
+              value: {{.Values.app}}
+            - name: ENDPOINT
+              value: apiaccount-svc:4003
+            - name: PRODUCT_ENDPOINT
+              value: apiproduct-svc:4002

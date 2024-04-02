@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiproduct
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: apiproduct
+  template:
+    metadata:
+      labels:
+        run: apiproduct
+    spec:
+      containers:
+        - name: apiproduct
+          image: 301261400751.dkr.ecr.us-east-1.amazonaws.com/api-product:2
+          ports:
+            - containerPort: 8010
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: APP_NAME
+              value: apiproduct

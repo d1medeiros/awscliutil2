@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apigateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: apigateway
+  template:
+    metadata:
+      labels:
+        run: apigateway
+    spec:
+      containers:
+        - name: apigateway
+          image: 301261400751.dkr.ecr.us-east-1.amazonaws.com/apigateway:12
+          resources:
+            requests:
+              memory: "10Mi"
+              cpu: "0.03"
+            limits:
+              memory: "20Mi"
+              cpu: "0.05"
+          ports:
+            - containerPort: 3000
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: APP_NAME
+              value: apigateway
+            - name: ENDPOINT
+              value: apiaccount-svc:4003
+            - name: PRODUCT_ENDPOINT
+              value: apiproduct-svc:4001
+            - name: FRAUD_ENDPOINT
+              value: apifraud-svc:4004
+            - name: OFFER_ENDPOINT
+              value: apioffer-svc:4005
+            - name: TRACE_ENDPOINT
+              value: "http://simplest-collector.monitoring:14268/api/traces"

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apiproduct-svc
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/path: "/actuator/prometheus"
+  labels:
+    run: apiproduct-svc
+spec:
+  type: NodePort
+  selector:
+    run: apiproduct
+  ports:
+    - protocol: TCP
+      port: 4001
+      targetPort: 8010

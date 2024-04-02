@@ -1,0 +1,6 @@
+app: apisku
+port: 4001
+container:
+  image: api-sku
+  version: 3
+  port: 8010

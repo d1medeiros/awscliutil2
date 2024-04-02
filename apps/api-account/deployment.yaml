@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiaccount
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: apiaccount
+  template:
+    metadata:
+      labels:
+        run: apiaccount
+    spec:
+      containers:
+        - name: apiaccount
+          image: 301261400751.dkr.ecr.us-east-1.amazonaws.com/api-account:6
+          ports:
+            - containerPort: 3000
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: ENDPOINT
+              value: apicustomer-svc:4002
+            - name: APP_NAME
+              value: apiaccount
+            - name: TRACE_ENDPOINT
+              value: "http://simplest-collector.monitoring:14268/api/traces"

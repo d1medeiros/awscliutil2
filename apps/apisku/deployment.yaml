@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apisku
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: apisku
+  template:
+    metadata:
+      labels:
+        run: apisku
+    spec:
+      containers:
+        - name: apisku
+          image: 301261400751.dkr.ecr.us-east-1.amazonaws.com/api-sku:2
+          ports:
+            - containerPort: 8010
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: APP_NAME
+              value: apisku

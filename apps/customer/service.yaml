@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apicustomer-svc
+  labels:
+    alias: localhost
+    run: apicustomer-svc
+spec:
+  type: NodePort
+  selector:
+    run: apicustomer
+  ports:
+    - protocol: TCP
+      port: 4002
+      targetPort: 3000
