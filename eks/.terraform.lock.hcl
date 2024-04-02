@@ -4,7 +4,7 @@
 provider "registry.terraform.io/hashicorp/aws" {
   version     = "5.40.0"
   constraints = ">= 4.33.0, >= 5.40.0, ~> 5.40.0"
-  hashes = [
+  hashes      = [
     "h1:mLZbhNUyXQTWQXOCoHglI10XwcvqGqvnn21juy/Jk68=",
     "zh:11f177a2385703740bd26d0652d3dba08575101d7639f386ce5637bdb0e29a13",
     "zh:203fc43e69634f1bd487a9dc24b01944dfd568beac78e491f26677d103d343ed",
@@ -27,7 +27,7 @@ provider "registry.terraform.io/hashicorp/aws" {
 provider "registry.terraform.io/hashicorp/cloudinit" {
   version     = "2.3.3"
   constraints = ">= 2.0.0"
-  hashes = [
+  hashes      = [
     "h1:ZmQ97fIcPW7hj/vynRB4zbtObK0Z/LVJPvCwlNd78zA=",
     "zh:0bd6ee14ca5cf0f0c83d3bb965346b1225ccd06a6247e80774aaaf54c729daa7",
     "zh:3055ad0dcc98de1d4e45b72c5889ae91b62f4ae4e54dbc56c4821be0fdfbed91",
@@ -47,7 +47,7 @@ provider "registry.terraform.io/hashicorp/cloudinit" {
 provider "registry.terraform.io/hashicorp/kubernetes" {
   version     = "2.27.0"
   constraints = ">= 1.11.1"
-  hashes = [
+  hashes      = [
     "h1:/3kLyOR2jTaWS1MKso4xAztrocGBMxi8yVadWiqSWOg=",
     "zh:3bdba30ae67c55dc7e9a317ac0da3b208ea7926fe9c2f0ae6587ee88dcc58d1f",
     "zh:3f35138a831c00b188d2ffee27111dd0cf59afad2dd5653ed9e67d59646de12c",
@@ -67,7 +67,7 @@ provider "registry.terraform.io/hashicorp/kubernetes" {
 provider "registry.terraform.io/hashicorp/local" {
   version     = "2.5.1"
   constraints = ">= 1.4.0"
-  hashes = [
+  hashes      = [
     "h1:tjcGlQAFA0kmQ4vKkIPPUC4it1UYxLbg4YvHOWRAJHA=",
     "zh:0af29ce2b7b5712319bf6424cb58d13b852bf9a777011a545fac99c7fdcdf561",
     "zh:126063ea0d79dad1f68fa4e4d556793c0108ce278034f101d1dbbb2463924561",
@@ -87,7 +87,7 @@ provider "registry.terraform.io/hashicorp/local" {
 provider "registry.terraform.io/terraform-aws-modules/http" {
   version     = "2.4.1"
   constraints = ">= 2.4.1"
-  hashes = [
+  hashes      = [
     "h1:FINkX7/X/cr5NEssB7dMqVWa6YtJtmwzvkfryuR39/k=",
     "zh:0111f54de2a9815ded291f23136d41f3d2731c58ea663a2e8f0fef02d377d697",
     "zh:0740152d76f0ccf54f4d0e8e0753739a5233b022acd60b5d2353d248c4c17204",

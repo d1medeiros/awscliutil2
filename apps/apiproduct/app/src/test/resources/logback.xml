@@ -5,8 +5,8 @@
         </encoder>
     </appender>
 
-    <logger name="com.example" level="info" />
+    <logger name="com.example" level="info"/>
     <root level="warn">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

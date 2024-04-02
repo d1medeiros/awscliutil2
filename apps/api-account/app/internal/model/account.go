@@ -1,7 +1,7 @@
 package model
 
 type Account struct {
-	Id         string `json:"id"`
+	Id        string     `json:"id"`
 	Customers []Customer `json:"customers"`
 }
 type Customer struct {

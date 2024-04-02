@@ -1,7 +1,6 @@
 package com.example.apiarchetypereactive.config.properties
 
 
-
 class APIProperties {
     lateinit var url: String
     var authorization: AuthorizationProperties = AuthorizationProperties()

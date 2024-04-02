@@ -1,6 +1,5 @@
 package com.example.apiarchetypereactive.config
 
-import com.example.apiarchetypereactive.client.http.SKUClient
 import com.example.apiarchetypereactive.client.http.SellerClient
 import com.example.apiarchetypereactive.config.properties.APIProperties
 import feign.Feign
